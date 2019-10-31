@@ -15,15 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+// Route::get('/articles', function () {
+//     // $articles = \App\Article::latest()->get();
+//     // $articles = \App\Article::take(2)->get();
+//     // $articles = \App\Article::paginate(2);
 
-Route::get('/test', function () {
-    $name = request('name');
-    return view('test', [
-        'name' => $name
-    ]);
-});
+//     return view('articles.index', [
+//         'articles' => \App\Article::latest()->get()
+//     ]);
+// });
+
+Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles/{id}', 'ArticlesController@show');
 
 Route::get('posts/{post}', 'PostsController@show');
