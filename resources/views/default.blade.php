@@ -17,7 +17,8 @@
 	<nav class="bg-gray-100 p-4">
 		<ul class="flex justify-center">
 			<li class="mx-2"><a href="/" class="hover:underline">Home</a></li>
-			<li class="mx-2"><a href="/articles" class="hover:underline">Articles</a></li>
+			<li class="mx-2"><a href="{{ route('articles.index') }}" class="hover:underline">Articles</a></li>
+			<li class="mx-2"><a href="{{ route('articles.create') }}" class="hover:underline">New Article</a></li>
 		</ul>
 	</nav>
 	@yield('content')
