@@ -53,9 +53,7 @@
           name="body"
           rows="10"
           cols="100"
-          placeholder="write your post here">
-          {{ old('body', $article->body) }}
-        </textarea>
+          placeholder="write your post here">{{ old('body', $article->body) }}</textarea>
         @error('body')
         <p class="text-red-500 text-xs italic mt-2"">{{ $errors->first('body') }}</p>
         @enderror
@@ -69,6 +67,23 @@
             type="submit">
             Update
           </button>
+      </div>
+    </form>
+    <form class=""
+      method="POST"
+      action="{{ route('articles.destroy', $article) }}">
+      @csrf
+      @method('DELETE')
+      <div class="
+        mt-4
+        flex
+        items-center
+        justify-end">
+        <button
+          class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit">
+          Delete
+        </button>
       </div>
     </form>
   </div>

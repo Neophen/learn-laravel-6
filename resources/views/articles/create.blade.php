@@ -46,9 +46,7 @@
           id="body"
           name="body"
           rows="10"
-          placeholder="write your post here">
-          {{ old('body') }}
-        </textarea>
+          placeholder="write your post here">{{ old('body') }}</textarea>
         <p class="text-red-500 text-xs italic">{{ $errors->first('body') }}</p>
       </div>
       <div class="flex items-center justify-end">
